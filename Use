@@ -1,0 +1,18 @@
+#include <Servo.h> 
+ 
+Servo myservo;  
+boolean time = 1; // placeholder
+int pos = 0;    
+ 
+void setup() 
+{ 
+  myservo.attach(9);  
+} 
+ 
+void loop() 
+{ 
+  if (time = 1)
+  {
+    
+  }
+}
