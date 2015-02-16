@@ -9,5 +9,9 @@ void loop() {
 	if (Serial.available() > 0) {
 		incomingByte = Serial.read();
 		Serial.println(incomingByte, DEC);
+		
+		if (isAplha(incomingByte)){
+		  Serial.println("**ACTIVATED**")
+		}
 	}
 }
