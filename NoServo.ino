@@ -4,10 +4,12 @@ int add = 5;
 
 void setup() {
   pinMode(Switch, OUTPUT);
+  Serial.begin(9600);
 }
 
 void loop(){
   analogWrite(Switch, power);
+  Serial.println(power);
   
   power = power + add;
   
