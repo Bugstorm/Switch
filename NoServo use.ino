@@ -6,7 +6,8 @@ int incomingByte = 0;
 int wait = 0;
 int max = 0;
 
-void setup(){
+void setup()
+{
   Serial.begin(9600);
   pinMode(Switch, OUTPUT);
 }
@@ -26,31 +27,31 @@ void loop()
     if (time = 1)
     {
       Serial.println("Time");
-        analogWrite(Switch, power);
+      analogWrite(Switch, power);
         
-        power = power + add;
+      power = power + add;
         
-        if (power == 255)
+      if (power == 255)
+      {
+        for(int wait = 0; wait < 1800000; wait +=100)
         {
-          for(int wait = 0; wait < 1800000; wait +=100)
-          {
-            delay(100);
-          }
-          
-          int max = 255;
-          wait = 0;
+          delay(100);
         }
         
-        if (int max = 255)
+        int max = 255;
+        wait = 0;
+      }
+       
+      if (int max = 255)
+      {
+        for(int max = 255; max > 0; max -=5)
         {
-          for(int max = 255; max > 0; max -=5)
-          {
-            analogWrite(Switch, power);
-            power = power - add;
-          }
+          analogWrite(Switch, power);
+          power = power - add;
         }
-        
         boolean time = 0;
       }
+    delay(30);
     }
   }
+}
