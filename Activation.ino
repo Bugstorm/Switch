@@ -10,7 +10,7 @@ void loop() {
 		incomingByte = Serial.read();
 		Serial.println(incomingByte, DEC);
 		
-		if (isAplha(incomingByte)){
+		if (isAlpha(incomingByte)){
 		  Serial.println("**ACTIVATED**");
 		}
 	}
