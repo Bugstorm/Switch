@@ -1,4 +1,4 @@
-int Switch = 0;
+const int Switch = 9;
 int power = 0;
 int add = 5;
 boolean time = 0; //placeholder
@@ -38,7 +38,7 @@ void loop()
           delay(100);
         }
         
-        int max = 255;
+        max = 255;
         wait = 0;
       }
        
