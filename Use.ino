@@ -50,3 +50,5 @@ for(int wait=0; wait < 1800000; wait +=100)
   }
 }
 
+/* This program probably doesn't work either
+But is not needed anymore */
