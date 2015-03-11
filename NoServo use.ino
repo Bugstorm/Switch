@@ -3,7 +3,6 @@ int power = 0;
 int add = 5;
 boolean activation = false; //placeholder
 int incomingByte = 0;
-int wait = 0;
 int max = 0;
 
 void setup()
@@ -39,7 +38,6 @@ void loop()
         }
         
         max = 255;
-        wait = 0;
       }
        
       if (int max = 255)
