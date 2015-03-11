@@ -15,6 +15,6 @@ boolean activationFunction(){
 void loop() {
   activation = activationFunction();
   if (activation == true){
-    //stuff
+    Serial.println("***ACTIVATED***");
   }
 }
