@@ -1,7 +1,7 @@
 const int Switch = 9;
 int power = 0;
 int add = 5;
-boolean time = 0; //placeholder
+boolean activation = false; //placeholder
 int incomingByte = 0;
 int wait = 0;
 int max = 0;
@@ -21,10 +21,10 @@ void loop()
     if (isAlpha(incomingByte))
     {
       Serial.println("***ACTIVATED***");
-      boolean time = 1;
+      boolean activation = true;
     }
     
-    if (time = 1)
+    if (activation = true)
     {
       Serial.println("Time");
       analogWrite(Switch, power);
@@ -49,7 +49,7 @@ void loop()
           analogWrite(Switch, power);
           power = power - add;
         }
-        boolean time = 0;
+        boolean activation = false;
       }
     delay(30);
     }
