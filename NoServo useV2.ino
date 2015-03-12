@@ -10,26 +10,26 @@ void setup(){
 }
 
 void loop(){
-  //activationFunction not tested yet
-  if (Serial.available() > 0) //needed?
-  {
+//  if (Serial.available() > 0) //needed?
+//  {
+//  activationFunction needs to be added
     incomingByte = Serial.read();
     
     if (isAlpha(incomingByte))
     {
       Serial.println("***ACTIVATED***");
-      boolean activation = true;
+      activation = true;
     }
-  }
+//  }
   
-  if (activation == true){
-    Serial.println("Time");
+  if (activation == 1){
+    Serial.println("Start");
     
     /* for loop not permanent, no pauze 
        test double condition */
     for (int i = 0; i >= 0 && i <= 255; i+=add){
       analogWrite(Switch,power);
-      if (power >= 255){
+      if (power >= 255 || power < 0){
         add = -add;
       }
       power = power + add;
