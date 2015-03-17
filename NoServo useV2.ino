@@ -9,31 +9,33 @@ void setup(){
   pinMode(Switch, OUTPUT);
 }
 
-void loop(){
-//  if (Serial.available() > 0) //needed?
-//  {
-//  activationFunction needs to be added
+boolean activationFunction(){
+  if (Serial.available() > 0){
     incomingByte = Serial.read();
-    
-    if (isAlpha(incomingByte))
-    {
-      Serial.println("***ACTIVATED***");
-      activation = true;
+    if (isAlpha(incomingByte)){
+      return true;
     }
-//  }
+  }
+}
+
+void loop(){
+  activation = activationFunction();
   
   if (activation == 1){
     Serial.println("Start");
     
-    /* for loop not permanent, no pauze 
-       test double condition */
-    for (int i = 0; i >= 0 && i <= 255; i+=add){
+    for(int i = 0; i < 255; i+=5){
       analogWrite(Switch,power);
-      if (power >= 255 || power < 0){
-        add = -add;
-      }
-      power = power + add;
+      Serial.println(power);
+      power = power + 5;
       delay(30);
     }
-  }
+    for (int i = 255; i > 0; i-=5){
+      analogWrite(Switch,power);
+      Serial.println(power);
+      power = power - 5;
+      delay(30);
+    }    
+    activation = false;
+    }
 }
