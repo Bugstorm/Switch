@@ -1,6 +1,5 @@
 const int Switch = 9;
 int power = 0;
-int add = 5;
 boolean activation = false; //placeholder
 int incomingByte = 0;
 
@@ -29,6 +28,10 @@ void loop(){
       Serial.println(power);
       power = power + 5;
       delay(30);
+    }
+    for (int t = 0; t < 1800000; t+=100){
+      delay(100);
+    }
     }
     for (int i = 255; i > 0; i-=5){
       analogWrite(Switch,power);
