@@ -32,7 +32,6 @@ void loop(){
     for (int t = 0; t < 1800000; t+=100){
       delay(100);
     }
-    }
     for (int i = 255; i > 0; i-=5){
       analogWrite(Switch,power);
       Serial.println(power);
