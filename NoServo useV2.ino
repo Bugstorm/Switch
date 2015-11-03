@@ -19,10 +19,10 @@ boolean activationFunction(){
 
 void loop(){
   activation = activationFunction();
-  
+
   if (activation == 1){
     Serial.println("Start");
-    
+
     for(int i = 0; i < 255; i+=5){
       analogWrite(Switch,power);
       Serial.println(power);
@@ -38,7 +38,7 @@ void loop(){
       Serial.println(power);
       power = power - 5;
       delay(30);
-    }    
+    }
     activation = false;
     }
 }
